@@ -8,6 +8,10 @@ import { CalendarDays, Clock, Heart, ArrowRight } from "lucide-react"
 import Blog from "@/models/blog"
 import { connectToDatabase } from "@/lib/db"
 
+
+export const revalidate=60;
+
+
 export const metadata: Metadata = {
   title: "Blog | AI-Generated Content Hub",
   description:
