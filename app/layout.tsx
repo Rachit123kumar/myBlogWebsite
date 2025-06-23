@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Blogs for AI & Tech ",
   description: "Blogs  for the ai and tech growth of the user.",
+  other:{
+      "google-site-verification": "j7QBZhrGSdwDY7vZDx6jwD2qldLG0-YMxCdyavN3XE8",
+  }
 };
 
 export default function RootLayout({
