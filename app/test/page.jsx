@@ -1,27 +1,31 @@
 
-// 'use client'
+'use client'
 
-// import { useEffect } from "react"
+import { useEffect } from "react"
 
 export default function page() {
 
-// curl '' --header 'Authorization: Bearer YOUR_BEARER_TOKEN'
+    // curl '' --header 'Authorization: Bearer YOUR_BEARER_TOKEN'
 
-    // useEffect(() => {
-    // async function getTwitterTrends() {
-    //         const res = await fetch("https://api.x.com/2/trends/by/woeid/23424775", {
-    //             headers: {
-    //                 Authorization: `AAAAAAAAAAAAAAAAAAAAACEcsgEAAAAAkm133%2BMV5lTriBVtPIrfM7%2BWSPE%3DJ9I1auEOBjbUOtWBTN9xtC340Yl6VzaSQFnq3zhOdd8PdB7l0N`,
-    //             },
-    //         });
+    useEffect(() => {
+        async function getTwitterTrends() {
 
-    //         const data = await res.json();
-    //         console.log(data)
-    //         return data[0].trends.slice(0, 10); // Top 10 trends
-    //     }
-    //     getTwitterTrends()
+            try{
 
-    // }, [])
+                const res = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a1d6a0f408384e24b30902b51a77efa5")
+                const data = await res.json();
+                console.log(data)
+                return data // Top 10 trends
+            } catch(err){
+                console.log(err);
+                console.log('error has happend')
+            }
+
+
+        }
+        getTwitterTrends()
+
+    }, [])
 
 
 
