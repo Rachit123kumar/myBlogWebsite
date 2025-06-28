@@ -39,7 +39,7 @@ type NumberingType = {
 
 export async function GET(req:NextRequest) {
 
-   if (req.headers.get("Authorization") !== `Bearer ${process.env.CRON_SECRET}`) {
+   if (req.headers.get("Authorization") !== `Bearer${process.env.CRON_SECRET}`) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
