@@ -1,9 +1,8 @@
 {
-    
   "crons": [
     {
       "path": "/api/descriptiontoblog",
-      "schedule": "0 * * * *"
+      "schedule": "*/5 * * * *"
     }
   ]
 }

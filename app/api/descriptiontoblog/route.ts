@@ -37,7 +37,14 @@ type NumberingType = {
   updatedAt: Date
 }
 
-export async function POST(req: NextRequest) {
+export async function GET(req:NextRequest) {
+
+   if (req.headers.get("Authorization") !== `Bearer ${process.env.CRON_SECRET}`) {
+    return new NextResponse("Unauthorized", { status: 401 });
+  }
+
+  console.log("CRON JOB TRIGGERED");
+
   await connectToDatabase()
 
   // Get numbering info
