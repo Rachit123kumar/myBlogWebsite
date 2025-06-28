@@ -39,7 +39,10 @@ type NumberingType = {
 
 export async function GET(req:NextRequest) {
 
-   if (req.headers.get("Authorization") !== `Bearer${process.env.CRON_SECRET}`) {
+   const url = new URL(req.url);
+     const authQuery = url.searchParams.get("Authorization");
+       const expected = `Bearer${process.env.CRON_SECRET}`;
+ if (authQuery !== expected) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
