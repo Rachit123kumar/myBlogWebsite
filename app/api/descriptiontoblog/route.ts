@@ -13,7 +13,7 @@ async function searchTavilyNews(query: string) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer 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",
+      Authorization: `Bearer ${process.env.TAVILY_API_KEY!}`,
     },
     body: JSON.stringify({
       query: query,
