@@ -35,6 +35,7 @@ const getBlogPosts = async () => {
   const blogs = await Blog.find() // Ensure visibility spelling is correct
     .sort({ publishedAt: -1 })
     .lean()
+    console.log(blogs)
 
   return blogs.map((post: any) => ({
     ...post,

@@ -33,30 +33,20 @@ export default function page() {
     }
 
 
+    async function newsDataio(){
+        const data=await fetch('/api/save-news')
+        const res=await data.json();
+        return res
+    }
+
     useEffect(() => {
 
 
 
-        // async function ges() {
-
-        //     fetch("https://api.tavily.com/search", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //             "Authorization": "Bearer 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"
-        //         },
-        //         body: JSON.stringify({
-        //             query: "Novo Nordisk said Hims & Hers has \"failed to adhere to the law which prohibits mass sales of compounded drugs\" under the \"false guise\" of personalization."
-        //         })
-        //     })
-        //         .then(response => response.json())
-        //         .then(data => console.log(data))
-        //         .catch(error => console.error("Error:", error));
-
-        // }
-        // ges()
+        
+        // generatingByAI()
         // getTwitterTrends()
-        generatingByAI()
+        console.log(newsDataio())
 
 
       
